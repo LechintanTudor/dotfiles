@@ -2,7 +2,7 @@ function fish_prompt
     set -l directory '~'
 
     if test $PWD != $HOME 
-        set -l directory basename $PWD
+        set directory (basename $PWD)
     end
 
     set -l symbol '$ '
