@@ -1,0 +1,19 @@
+# Ignore everything
+/*
+
+# Include these top-level files
+!.gitignore
+!README.md
+
+# Allow including files from these directories
+!.config/
+
+# Ignore files from previously whitelisted directories
+.config/*
+.config/tmux/plugins/
+
+# Include files from whitelisted directories
+!.config/alacritty/
+!.config/fish/
+!.config/tmux/
+
