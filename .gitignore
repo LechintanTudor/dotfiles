@@ -15,5 +15,6 @@
 # Include files from whitelisted directories
 !.config/alacritty/
 !.config/fish/
+!.config/helix/
 !.config/tmux/
 
