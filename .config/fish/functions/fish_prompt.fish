@@ -1,3 +1,5 @@
+#!/bin/fish
+
 function fish_prompt
     set -l directory '~'
 
