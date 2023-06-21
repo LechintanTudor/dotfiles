@@ -22,5 +22,10 @@ cursor:
   blink_timeout: 0
 
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -s
+    - main
 
