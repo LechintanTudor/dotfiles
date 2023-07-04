@@ -1,6 +1,9 @@
 # Disable startup message
 set -U fish_greeting
 
+# Bindings
+bind \ce 'clear; commandline -f repaint'
+
 # Directory navigation shortcut
 abbr -a cd.. cd ..
 
