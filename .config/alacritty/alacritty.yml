@@ -29,3 +29,6 @@ shell:
     - -s
     - main
 
+  scrolling:
+    history: 0
+
