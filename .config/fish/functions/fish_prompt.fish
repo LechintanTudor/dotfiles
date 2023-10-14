@@ -16,12 +16,16 @@ function fish_prompt
         and set color $fish_color_cwd_root
     end
 
-    echo -n [$USER@$hostname\ 
+    set_color $color
+    echo -n $USER@$hostname
+
+    set_color normal
+    echo -n :
 
     set_color $color
     echo -n $directory
-    set_color normal
 
-    echo -n ]$symbol
+    set_color normal
+    echo -n $symbol
 end
 
