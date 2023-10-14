@@ -1,6 +1,6 @@
 #!/bin/fish
 
 function dotfiles
-    git --git-dir=$HOME/.dotfiles --work-tree=$HOME $argv
+    git --git-dir="$HOME/.local/share/dotfiles" --work-tree="$HOME" $argv
 end
 
