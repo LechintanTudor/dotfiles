@@ -1,19 +1,22 @@
 #!/bin/fish
 
 function fish_prompt
-    set -l directory '~'
-
-    if test $PWD != $HOME 
-        set directory (basename $PWD)
+    if test $PWD = $HOME
+        set -f directory '~'
+    else
+        set -f directory (basename $PWD)
     end
 
-    set -l symbol '$ '
-    set -l color $fish_color_cwd
+    set -f color $fish_color_cwd
 
     if fish_is_root_user
-        set symbol '# '
-        set -q fish_color_cwd_root
-        and set color $fish_color_cwd_root
+        set -f symbol '# '
+
+        if set -q fish_color_cwd_root
+            set -f color $fish_color_cwd_root
+        end
+    else
+        set -f symbol '$ '
     end
 
     set_color $color
