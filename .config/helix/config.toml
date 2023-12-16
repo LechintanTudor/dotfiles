@@ -3,3 +3,6 @@ theme = "catppuccin_mocha"
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.soft-wrap]
+enable = true
+
