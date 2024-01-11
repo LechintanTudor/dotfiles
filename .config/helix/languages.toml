@@ -6,3 +6,17 @@ indent = { tab-width = 4, unit = "    " }
 name = "cpp"
 indent = { tab-width = 4, unit = "    " }
 
+[[language]]
+name = "rust"
+
+[[language]]
+name = "toml"
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.rust-analyzer]
+config.rustfmt.overrideCommand = [
+    "rustfmt",
+    "+nightly",
+    "--emit=stdout",
+]
+
