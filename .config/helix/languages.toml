@@ -9,8 +9,10 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "rust"
 
-[language-server.rust-analyzer]
-config.rustfmt.overrideCommand = [
+[language-server.rust-analyzer.config]
+imports.granularity.group = "module"
+imports.prefix = "crate"
+rustfmt.overrideCommand = [
   "rustfmt",
   "+nightly",
   "--emit=stdout",
