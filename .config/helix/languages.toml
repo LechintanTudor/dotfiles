@@ -7,9 +7,15 @@ name = "cpp"
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
+name = "kdl"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
 name = "rust"
 
 [language-server.rust-analyzer.config]
+hover.memoryLayout.alignment = "decimal"
+hover.memoryLayout.offset = "decimal"
 imports.granularity.group = "module"
 imports.prefix = "crate"
 rustfmt.overrideCommand = [
