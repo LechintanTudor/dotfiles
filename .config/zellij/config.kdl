@@ -1,0 +1,44 @@
+theme "catppuccin-mocha"
+default_shell "/usr/bin/fish"
+session_serialization false
+
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl a" { SwitchToMode "tmux"; }
+
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt l" { MoveFocus "Right"; }
+
+        bind "Alt H" { MovePane "Left"; }
+        bind "Alt J" { MovePane "Down"; }
+        bind "Alt K" { MovePane "Up"; }
+        bind "Alt L" { MovePane "Right"; }
+    }
+    resize {
+        bind "Esc" { SwitchToMode "normal"; }
+
+        bind "h" { Resize "Left"; }
+        bind "j" { Resize "Down"; }
+        bind "k" { Resize "Up"; }
+        bind "l" { Resize "Right"; }
+
+        bind "-" { Resize "Decrease"; }
+        bind "+" { Resize "Increase"; }
+    }
+    tmux {
+        bind "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl a" { SwitchToMode "resize"; }
+
+        bind "h" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "l" { GoToNextTab; SwitchToMode "normal"; }
+
+        bind "c" { NewTab; SwitchToMode "normal"; }
+        bind "v" { NewPane "Right"; SwitchToMode "normal"; }
+        bind "b" { NewPane "Down"; SwitchToMode "normal"; }
+
+        bind "q" { CloseFocus; SwitchToMode "normal"; }
+        bind "Q" { CloseTab; SwitchToMode "normal"; }
+    }
+}

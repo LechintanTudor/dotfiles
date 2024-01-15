@@ -3,6 +3,9 @@ import = [
   "/home/lechi/.config/alacritty/fonts/iosevka-term-nf.toml",
 ]
 
+[window]
+dynamic_title = false
+
 [window.dimensions]
 columns = 100
 lines = 24
@@ -22,8 +25,8 @@ shape = "Beam"
 blinking = "On"
 
 [shell]
-program = "/usr/bin/tmux"
-args = ["new-session", "-A", "-s", "main"]
+program = "/usr/bin/zellij"
+args = ["attach", "--create", "main"]
 
 [scrolling]
 history = 0

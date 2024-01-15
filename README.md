@@ -8,6 +8,6 @@
 ## Programs
 
 * Terminal emulator: [alacritty](https://github.com/alacritty/alacritty)
-* Terminal multiplexer: [tmux](https://github.com/tmux/tmux)
+* Terminal multiplexer: [zellij](https://github.com/zellij-org/zellij)
 * Shell: [fish](https://github.com/fish-shell/fish-shell)
 * Text editor: [helix](https://github.com/helix-editor/helix)
