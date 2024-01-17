@@ -8,7 +8,7 @@ dynamic_title = false
 
 [window.dimensions]
 columns = 100
-lines = 24
+lines = 26
 
 [window.padding]
 x = 3
