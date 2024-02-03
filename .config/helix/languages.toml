@@ -18,8 +18,4 @@ hover.memoryLayout.alignment = "decimal"
 hover.memoryLayout.offset = "decimal"
 imports.granularity.group = "module"
 imports.prefix = "crate"
-rustfmt.overrideCommand = [
-  "rustfmt",
-  "+nightly",
-  "--emit=stdout",
-]
+rustfmt.extraArgs = ["+nightly"]
