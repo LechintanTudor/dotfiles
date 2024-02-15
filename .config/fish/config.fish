@@ -28,3 +28,6 @@ function zellij_update_name --on-variable PWD
 end
 
 zellij_update_name
+
+# Zoxide integration
+zoxide init --cmd cd fish | source
