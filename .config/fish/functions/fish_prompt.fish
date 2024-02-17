@@ -1,5 +1,3 @@
-#!/bin/fish
-
 function fish_prompt
     if test $PWD = $HOME
         set -f directory '~'
@@ -31,4 +29,3 @@ function fish_prompt
     set_color normal
     echo -n $symbol
 end
-

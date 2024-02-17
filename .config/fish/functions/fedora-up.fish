@@ -1,5 +1,3 @@
-#!/bin/fish
-
 function fedora-up
     echo 'Updating Fedora...'
     sudo dnf -y upgrade
@@ -9,4 +7,3 @@ function fedora-up
     flatpak update -y
     echo
 end
-

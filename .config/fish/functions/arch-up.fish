@@ -1,5 +1,3 @@
-#!/bin/fish
-
 function arch-up
     echo 'Updating Arch...'
     paru
@@ -9,4 +7,3 @@ function arch-up
     flatpak update -y
     echo
 end
-
