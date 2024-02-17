@@ -1,8 +1,10 @@
 theme = "catppuccin_mocha"
 
+[editor]
+shell = ["fish", "-c"]
+
 [editor.cursor-shape]
 insert = "bar"
 
 [editor.soft-wrap]
 enable = true
-
