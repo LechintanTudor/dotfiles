@@ -16,6 +16,7 @@
 !.config/alacritty/
 !.config/fish/
 !.config/helix/
+!.config/lsd/
 !.config/tmux/
 !.config/zellij/
 

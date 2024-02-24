@@ -1,0 +1,11 @@
+blocks:
+  - permission
+  - user
+  - size
+  - name
+  
+icons:
+  separator: "  "
+
+sorting:
+  dir-grouping: first

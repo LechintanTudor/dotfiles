@@ -1,16 +1,23 @@
 # Disable startup message
 set -U fish_greeting
 
+# Environment
+set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Bindings
 bind \ce 'clear; commandline -f repaint'
 
-# Directory navigation shortcut
-abbr -a cd.. cd ..
-
 # Program abbreviations 
+abbr -a cd.. cd ..
 abbr -a hx helix
 abbr -a vi nvim
 abbr -a vim nvim
+
+# Program replacements
+type -q fd && alias find fd
+type -q lsd && alias ls lsd
+type -q rg && alias grep rg
+type -q zoxide && zoxide init --cmd cd fish | source
 
 # Zellij integration
 function zellij_update_name --on-variable PWD
@@ -28,6 +35,3 @@ function zellij_update_name --on-variable PWD
 end
 
 zellij_update_name
-
-# Zoxide integration
-zoxide init --cmd cd fish | source
