@@ -14,6 +14,7 @@ abbr -a vi nvim
 abbr -a vim nvim
 
 # Program replacements
+type -q bat && alias cat bat
 type -q fd && alias find fd
 type -q lsd && alias ls lsd
 type -q rg && alias grep rg
