@@ -1,6 +1,6 @@
 import = [
-  "/home/lechi/.config/alacritty/themes/catppuccin-mocha.toml",
-  "/home/lechi/.config/alacritty/fonts/iosevka-term-nf.toml",
+  "~/.config/alacritty/themes/catppuccin-mocha.toml",
+  "~/.config/alacritty/fonts/iosevka-term-nf.toml",
 ]
 
 [window]
