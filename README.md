@@ -2,6 +2,13 @@
 
 My dotfiles for Linux.
 
+## Installation
+
+```shell
+git clone --bare git@github.com:LechintanTudor/dotfiles.git "$HOME/.local/share/dotfiles"
+git --git-dir="$HOME/.local/share/dotfiles" --work-tree="$HOME" checkout -f
+```
+
 ## Theme
 
 - Color scheme: [catppuccin](https://github.com/catppuccin/catppuccin)
