@@ -9,3 +9,13 @@ insert = "bar"
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal]
+C-s = ":write-all"
+Z = { Q = ":quit!", Z = ":write-quit-all" }
+
+[keys.insert]
+C-h = "move_char_left"
+C-j = "move_visual_line_down"
+C-k = "move_visual_line_up"
+C-l = "move_char_right"

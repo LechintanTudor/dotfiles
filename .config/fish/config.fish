@@ -5,7 +5,7 @@ set -U fish_greeting
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Bindings
-bind \ce 'clear; commandline -f repaint'
+bind \ce helix
 
 # Program abbreviations 
 abbr -a cd.. cd ..
