@@ -5,6 +5,7 @@ session_serialization false
 keybinds clear-defaults=true {
     normal {
         bind "Ctrl a" { SwitchToMode "tmux"; }
+        bind "Ctrl p" { ToggleFloatingPanes; }
 
         bind "Alt h" { MoveFocus "Left"; }
         bind "Alt j" { MoveFocus "Down"; }

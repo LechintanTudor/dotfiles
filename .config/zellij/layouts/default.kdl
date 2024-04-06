@@ -1,6 +1,16 @@
 layout {
-    pane
-    pane size=1 borderless=true {
-        plugin location="zellij:compact-bar"
+    new_tab_template hide_floating_panes=true {
+        pane
+        floating_panes {
+            pane {
+                x "10%"
+                y "10%"
+                width "80%"
+                height "80%"
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
     }
 }
