@@ -2,6 +2,7 @@ theme = "catppuccin_mocha"
 
 [editor]
 color-modes = true
+popup-border = "all"
 shell = ["fish", "-c"]
 
 [editor.cursor-shape]
