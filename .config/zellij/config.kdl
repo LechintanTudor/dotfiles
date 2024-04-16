@@ -35,6 +35,9 @@ keybinds clear-defaults=true {
         bind "h" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "l" { GoToNextTab; SwitchToMode "normal"; }
 
+        bind "H" { MoveTab "left"; SwitchToMode "normal"; }
+        bind "L" { MoveTab "right"; SwitchToMode "normal"; }
+
         bind "c" { NewTab; SwitchToMode "normal"; }
         bind "v" { NewPane "Right"; SwitchToMode "normal"; }
         bind "b" { NewPane "Down"; SwitchToMode "normal"; }
