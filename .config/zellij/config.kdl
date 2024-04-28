@@ -3,6 +3,9 @@ default_shell "/usr/bin/fish"
 session_serialization false
 
 keybinds clear-defaults=true {
+    shared_except "normal" {
+        bind "Esc" { SwitchToMode "normal"; }
+    }
     normal {
         bind "Ctrl a" { SwitchToMode "tmux"; }
         bind "Ctrl p" { ToggleFloatingPanes; }
@@ -18,8 +21,6 @@ keybinds clear-defaults=true {
         bind "Alt L" { MovePane "Right"; }
     }
     resize {
-        bind "Esc" { SwitchToMode "normal"; }
-
         bind "h" { Resize "Left"; }
         bind "j" { Resize "Down"; }
         bind "k" { Resize "Up"; }
@@ -29,7 +30,6 @@ keybinds clear-defaults=true {
         bind "+" { Resize "Increase"; }
     }
     tmux {
-        bind "Esc" { SwitchToMode "normal"; }
         bind "Ctrl a" { SwitchToMode "resize"; }
 
         bind "h" { GoToPreviousTab; SwitchToMode "normal"; }
