@@ -15,8 +15,8 @@ hidden = false
 enable = true
 
 [keys.normal]
-C-s = ":write-all"
-Z = { Q = ":quit!", Z = ":write-quit-all" }
+C-s = ":write-all!"
+Z = { Q = ":quit!", Z = ":write-quit-all!" }
 
 [keys.insert]
 C-h = "move_char_left"
