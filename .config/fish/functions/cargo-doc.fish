@@ -1,13 +1,11 @@
 function cargo-doc
-    set -f directory $(basename $PWD)
-
     cargo doc
     python -m http.server -d target/doc &
 
-    set -f server_pid $(jobs --pid)
+    set -l server_pid (jobs --pid)
 
     sleep 0.5
-    xdg-open "http://localhost:8000/$directory/index.html"
+    xdg-open 'http://localhost:8000/'
 
     fg $server_pid
 end
