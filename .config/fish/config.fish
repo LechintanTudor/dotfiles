@@ -51,13 +51,13 @@ abbr -a crr cargo run --release
 abbr -a dfsa dotfiles add .
 abbr -a dfs dotfiles
 abbr -a dfss dotfiles status
-abbr -a --set-cursor dfsc dotfiles commit -m '%'
+abbr -a --set-cursor dfsc dotfiles commit -m \'%\'
 
 # Git
 abbr -a ga git add .
 abbr -a g git
 abbr -a gs git status
-abbr -a --set-cursor gc git commit -m '%'
+abbr -a --set-cursor gc git commit -m \'%\'
 
 # Editors
 abbr -a hx helix
