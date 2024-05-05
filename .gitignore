@@ -15,6 +15,7 @@
 # Include files from whitelisted directories
 !.config/alacritty/
 !.config/bat/
+!.config/fastfetch/
 !.config/fish/
 !.config/helix/
 !.config/lsd/
