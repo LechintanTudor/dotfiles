@@ -47,6 +47,11 @@ abbr -a c cargo
 abbr -a cr cargo run
 abbr -a crr cargo run --release
 
+# Docker
+abbr -a d docker
+abbr -a dc docker compose
+abbr -a dr docker run --rm -it
+
 # Dotfiles
 abbr -a dfsa dotfiles add .
 abbr -a dfs dotfiles
