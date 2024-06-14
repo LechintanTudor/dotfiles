@@ -15,8 +15,6 @@ if set -q ZELLIJ
 
         zellij action rename-pane $directory
     end
-
-    zellij_update_name
 end
 
 #
