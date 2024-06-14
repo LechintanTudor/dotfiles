@@ -15,6 +15,10 @@ if set -q ZELLIJ
 
         zellij action rename-pane $directory
     end
+
+    if test $PWD != $HOME
+        zellij_update_name
+    end
 end
 
 #
