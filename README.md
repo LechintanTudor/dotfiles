@@ -28,3 +28,4 @@ git --git-dir="$HOME/.local/share/dotfiles" --work-tree="$HOME" checkout -f
 - `find` replacement: [fd](https://github.com/sharkdp/fd)
 - `grep` replacement: [ripgrep](https://github.com/BurntSushi/ripgrep)
 - `ls` replacement: [lsd](https://github.com/lsd-rs/lsd)
+- `sudo` replacement: [doas](https://github.com/Duncaen/OpenDoas)

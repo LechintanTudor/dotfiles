@@ -75,7 +75,10 @@ abbr -a vi nvim
 # Other
 abbr -a ff fastfetch
 
+#
 # Program replacements
+#
+
 type -q bat && alias cat bat
 type -q doas && alias sudo doas
 type -q fd && alias find fd
