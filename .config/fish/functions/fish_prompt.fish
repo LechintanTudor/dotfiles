@@ -5,15 +5,11 @@ function fish_prompt
         set -f directory (basename $PWD)
     end
 
-    set -f color $fish_color_cwd
-
     if fish_is_root_user
+        set -f color red
         set -f symbol '# '
-
-        if set -q fish_color_cwd_root
-            set -f color $fish_color_cwd_root
-        end
     else
+        set -f color green
         set -f symbol '$ '
     end
 
@@ -21,10 +17,20 @@ function fish_prompt
     echo -n $USER@$hostname
 
     set_color normal
-    echo -n :
+    echo -n ':'
 
     set_color $color
     echo -n $directory
+
+    set -f git_prompt (fish_git_prompt %s)
+
+    if test -n "$git_prompt"
+        set_color normal
+        echo -n ':'
+
+        set_color magenta
+        echo -n $git_prompt
+    end
 
     set_color normal
     echo -n $symbol
