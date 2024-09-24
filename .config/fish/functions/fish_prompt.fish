@@ -7,17 +7,14 @@ function fish_prompt
 
     if fish_is_root_user
         set -f color red
-        set -f symbol '# '
+        set -f symbol '#'
     else
         set -f color green
-        set -f symbol '$ '
+        set -f symbol '$'
     end
 
-    set_color $color
-    echo -n $USER@$hostname
-
     set_color normal
-    echo -n ':'
+    echo -n '['
 
     set_color $color
     echo -n $directory
@@ -33,5 +30,5 @@ function fish_prompt
     end
 
     set_color normal
-    echo -n $symbol
+    echo -n "]$symbol "
 end
