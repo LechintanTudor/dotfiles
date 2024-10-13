@@ -22,6 +22,12 @@ if set -q ZELLIJ
 end
 
 #
+# Paths
+#
+
+fish_add_path -P "$HOME/.cargo/bin"
+
+#
 # Environment
 #
 
