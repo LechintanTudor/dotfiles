@@ -12,12 +12,12 @@ git --git-dir="$HOME/.local/share/dotfiles" --work-tree="$HOME" checkout -f
 ## Theme
 
 - Color scheme: [catppuccin](https://github.com/catppuccin/catppuccin)
-- Font: [iosevka](https://github.com/be5invis/Iosevka) nerd
+- Font: [iosevka](https://github.com/be5invis/Iosevka)
 
 ## Core Programs
 
 - Terminal emulator: [alacritty](https://github.com/alacritty/alacritty)
-- Terminal multiplexer: [zellij](https://github.com/zellij-org/zellij)
+- Terminal multiplexer: [tmux](https://github.com/tmux/tmux)
 - Shell: [fish](https://github.com/fish-shell/fish-shell)
 - Text editor: [helix](https://github.com/helix-editor/helix)
 

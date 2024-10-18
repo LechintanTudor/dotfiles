@@ -25,9 +25,8 @@ shape = "Beam"
 blinking = "On"
 
 [shell]
-program = "/usr/bin/zellij"
-args = ["attach", "--create", "main"]
+program = "/usr/bin/tmux"
+args = ["new-session", "-A", "-s", "main"]
 
 [scrolling]
 history = 0
-
