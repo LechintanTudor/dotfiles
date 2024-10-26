@@ -1,3 +1,4 @@
+[general]
 import = [
   "~/.config/alacritty/themes/catppuccin-mocha.toml",
   "~/.config/alacritty/fonts/iosevka-term-nf.toml",
@@ -24,7 +25,7 @@ blink_timeout = 0
 shape = "Beam"
 blinking = "On"
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/tmux"
 args = ["new-session", "-A", "-s", "main"]
 
