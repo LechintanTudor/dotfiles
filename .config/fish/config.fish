@@ -20,6 +20,7 @@ set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 bind \ce $EDITOR
 bind \cn 'xdg-open .'
+bind \cq search-history
 
 #
 # Program configuration
