@@ -1,8 +1,8 @@
 function search-history
     set command (history | fzf)
+    commandline -f repaint
 
     if test -n "$command"
-        commandline -f repaint
         commandline -- $command
     end
 end
