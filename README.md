@@ -7,6 +7,7 @@ My dotfiles for Linux.
 ```shell
 git clone --bare git@github.com:LechintanTudor/dotfiles.git "$HOME/.local/share/dotfiles"
 git --git-dir="$HOME/.local/share/dotfiles" --work-tree="$HOME" checkout -f
+bat cache --build
 ```
 
 ## Theme
