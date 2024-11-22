@@ -1,6 +1,6 @@
-function gci
+function gsb
     if not git rev-parse --is-inside-work-tree >/dev/null 2>&1
-        echo "Not inside a Git repository."
+        echo 'Not inside a Git repository.'
         return
     end
 
@@ -9,5 +9,5 @@ function gci
         xargs \
             --no-run-if-empty \
             git \
-            checkout
+            switch
 end
