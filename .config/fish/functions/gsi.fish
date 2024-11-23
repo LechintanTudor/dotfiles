@@ -1,4 +1,4 @@
-function gsb
+function gsi
     if not git rev-parse --is-inside-work-tree >/dev/null 2>&1
         echo 'Not inside a Git repository.'
         return
