@@ -1,0 +1,63 @@
+spawn-at-startup "waybar"
+
+binds {
+    // Applications
+    Mod+Return { spawn "alacritty"; }
+    Mod+D { spawn "fuzzel"; }
+
+    // Session actions
+    Mod+Shift+E { quit; }
+
+    // Window actions
+    Mod+Q { close-window; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    // Focus - Keyboard
+    Mod+H { focus-column-left-or-last; }
+    Mod+L { focus-column-right-or-first; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+
+    // Focus - Scroll wheel
+    Mod+WheelScrollDown { focus-column-right; }
+    Mod+WheelScrollUp { focus-column-left; }
+    Mod+Alt+WheelScrollDown { focus-window-or-workspace-down; }
+    Mod+Alt+WheelScrollUp { focus-window-or-workspace-up; }
+
+    // Movement
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Alt+H { consume-window-into-column; }
+    Mod+Alt+L { expel-window-from-column; }
+
+    // Audio
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+}
+
+input {
+    focus-follows-mouse
+    
+    keyboard {
+        xkb {
+            layout "us"
+            options "caps:escape"
+        }
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    touchpad {
+        accel-profile "flat"
+        dwt
+        natural-scroll
+        tap
+    }
+}

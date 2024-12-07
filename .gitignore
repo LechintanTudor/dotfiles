@@ -19,6 +19,7 @@
 !.config/fish/
 !.config/helix/
 !.config/lsd/
+!.config/niri/
 !.config/paru/
 !.config/tmux/
 !.config/zellij/
