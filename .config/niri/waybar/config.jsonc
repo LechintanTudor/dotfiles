@@ -6,11 +6,13 @@
 
   "backlight": {
     "format": "{icon}  {percent}",
-    "format-icons": ["", ""]
+    "format-icons": ["", ""],
+    "on-scroll-down": "brightnessctl -q set 1%-",
+    "on-scroll-up": "brightnessctl -q set +1%",
   },
   "wireplumber": {
     "format": "{icon}  {volume}",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
   },
   "battery": {
     "format": "{icon}  {capacity}",
