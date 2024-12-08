@@ -1,0 +1,35 @@
+@import "catppuccin-mocha.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Iosevka Term NF;
+  font-size: 12pt;
+}
+
+window#waybar {
+  background-color: @mantle;
+  color: @text;
+}
+
+#backlight,
+#battery,
+#wireplumber {
+  padding: 0 2px;
+  margin: 0 4px;
+}
+
+#backlight {
+  color: @yellow;
+  border-bottom: 2px solid @yellow;
+}
+
+#wireplumber {
+  color: @blue;
+  border-bottom: 2px solid @blue;
+}
+
+#battery {
+  color: @green;
+  border-bottom: 2px solid @green;
+}

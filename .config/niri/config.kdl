@@ -1,4 +1,6 @@
-spawn-at-startup "waybar"
+spawn-at-startup "waybar" \
+    "-c" "~/.config/niri/waybar/config.jsonc" \
+    "-s" "~/.config/niri/waybar/style.css"
 
 binds {
     // Applications

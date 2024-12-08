@@ -1,0 +1,19 @@
+{
+  "layer": "top",
+  "modules-left": ["niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["backlight", "wireplumber", "battery"],
+
+  "backlight": {
+    "format": "{icon}  {percent}",
+    "format-icons": ["", ""]
+  },
+  "wireplumber": {
+    "format": "{icon}  {volume}",
+    "format-icons": ["", "", ""]
+  },
+  "battery": {
+    "format": "{icon}  {capacity}",
+    "format-icons": ["", "", "", "", ""],
+  },
+}
