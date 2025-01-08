@@ -2,6 +2,7 @@ theme = "catppuccin_mocha"
 
 [editor]
 color-modes = true
+end-of-line-diagnostics = "hint"
 popup-border = "all"
 shell = ["fish", "-c"]
 
