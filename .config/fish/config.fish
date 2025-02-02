@@ -11,7 +11,7 @@ fish_add_path -P "$HOME/.cargo/bin"
 # Environment
 #
 
-set -gx EDITOR /bin/helix
+set -gx EDITOR helix
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 #
@@ -41,6 +41,12 @@ set -gx FZF_DEFAULT_OPTS '
     --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
     --color=selected-bg:#45475a
 '
+
+# Helix
+function helix
+    command helix $argv
+    printf '\033[0 q'
+end
 
 # Zellij
 if set -q ZELLIJ
