@@ -17,6 +17,7 @@
 !.config/bat/
 !.config/fastfetch/
 !.config/fish/
+!.config/ghostty/
 !.config/helix/
 !.config/lsd/
 !.config/niri/

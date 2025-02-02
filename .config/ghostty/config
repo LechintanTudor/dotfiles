@@ -1,0 +1,20 @@
+theme = catppuccin-mocha
+window-theme = ghostty
+
+font-family = IosevkaTerm Nerd Font
+font-feature = -calt, -liga, -dlig
+font-size = 12
+
+window-width = 110
+window-height = 30
+window-padding-x = 4
+window-padding-y = 4
+
+confirm-close-surface = false
+resize-overlay = never
+
+cursor-style = bar
+cursor-style-blink = true
+
+scrollback-limit = 0
+command = tmux new-session -A -s main
