@@ -5,7 +5,7 @@ function cargo-doc
     set -l server_pid (jobs --pid)
 
     sleep 0.5
-    xdg-open 'http://localhost:8000/'
+    xdg-open "http://localhost:8000/$(basename $PWD)"
 
     fg $server_pid
 end
