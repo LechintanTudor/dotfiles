@@ -1,8 +1,10 @@
 [general]
 import = [
   "~/.config/alacritty/themes/catppuccin-mocha.toml",
-  "~/.config/alacritty/fonts/iosevka-term-nf.toml",
 ]
+
+[font.normal]
+family = "IosevkaTerm Nerd Font"
 
 [window]
 dynamic_title = false
