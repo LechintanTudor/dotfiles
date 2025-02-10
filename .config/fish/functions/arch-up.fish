@@ -4,7 +4,7 @@ function arch-up
     echo
 
     echo '[2/5] Deleting orphaned Arch packages...'
-    pacman -Qdtq | xargs -r doas pacman -Rns
+    pacman -Qdtq | xargs -r doas pacman -Rns --noconfirm
     echo
 
     echo '[3/5] Updating Flatpaks...'
