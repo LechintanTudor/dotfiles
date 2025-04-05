@@ -19,6 +19,10 @@ enable = true
 C-s = ":write-all!"
 Z = { Q = ":quit!", Z = ":write-quit-all!" }
 
+[keys.normal.space]
+f = "file_picker_in_current_directory"
+F = "file_picker"
+
 [keys.insert]
 C-h = "move_char_left"
 C-j = "move_visual_line_down"
