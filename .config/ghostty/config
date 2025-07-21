@@ -1,20 +1,52 @@
+# Theme
 theme = catppuccin-mocha
 window-theme = ghostty
+unfocused-split-opacity = 0.8
 
-font-family = IosevkaTerm Nerd Font
-font-feature = -calt, -liga, -dlig
-font-size = 12
+# Shell
+command = /usr/bin/fish
 
+# Window
 window-width = 110
 window-height = 30
 window-padding-x = 4
 window-padding-y = 4
 
-confirm-close-surface = false
-resize-overlay = never
+# Font
+font-family = IosevkaTerm Nerd Font
+font-feature = -calt, -liga, -dlig
+font-size = 12
 
+# Cursor
 cursor-style = bar
 cursor-style-blink = true
 
-scrollback-limit = 0
-command = tmux new-session -A -s main
+# Behavior
+confirm-close-surface = false
+resize-overlay = never
+
+# Reload config
+keybind = ctrl+a>shift+c=reload_config
+
+# Create surfaces
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>b=new_split:down
+keybind = ctrl+a>c=new_tab
+
+# Close surfaces
+keybind = ctrl+a>q=close_surface
+keybind = ctrl+a>shift+q=close_tab
+
+# Navigate splits
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+
+# Move tabs
+keybind = ctrl+a>shift+h=move_tab:-1
+keybind = ctrl+a>shift+l=move_tab:1
+
+# Navigate tabs
+keybind = ctrl+a>h=previous_tab
+keybind = ctrl+a>l=next_tab
