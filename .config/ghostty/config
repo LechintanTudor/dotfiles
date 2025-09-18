@@ -1,5 +1,5 @@
 # Theme
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 window-theme = ghostty
 unfocused-split-opacity = 0.8
 
