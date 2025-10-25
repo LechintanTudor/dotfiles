@@ -25,6 +25,9 @@ cursor-style-blink = true
 confirm-close-surface = false
 resize-overlay = never
 
+# Mouse
+mouse-scroll-multiplier = 1
+
 # Reload config
 keybind = ctrl+a>shift+c=reload_config
 
