@@ -15,55 +15,12 @@ set -gx EDITOR helix
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 #
-# Bindings
+# Keybindings
 #
 
 bind \ce $EDITOR
 bind \cn 'xdg-open .'
 bind \cq search-history
-
-#
-# Program configuration
-#
-
-# Fzf
-set -gx FZF_DEFAULT_OPTS '
-    --bind=btab:up,tab:down
-    --border=sharp
-    --cycle
-    --height=45%
-    --info=inline
-    --layout=reverse
-    --no-sort
-
-    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
-    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
-    --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
-    --color=selected-bg:#45475a
-'
-
-# Helix
-function helix
-    command helix $argv
-    printf '\033[0 q'
-end
-
-# Zellij
-if set -q ZELLIJ
-    function zellij_update_name --on-variable PWD
-        if test $PWD = $HOME
-            set -f directory '~'
-        else
-            set -f directory $(basename $PWD)
-        end
-
-        zellij action rename-pane $directory
-    end
-
-    if test $PWD != $HOME
-        zellij_update_name
-    end
-end
 
 #
 # Program abbreviations
@@ -115,3 +72,78 @@ type -q fd && alias find fd
 type -q lsd && alias ls lsd
 type -q rg && alias grep rg
 type -q zoxide && zoxide init --cmd cd fish | source
+
+#
+# Program configuration
+#
+
+# Fzf
+set -gx FZF_DEFAULT_OPTS '
+    --bind=btab:up,tab:down
+    --border=sharp
+    --cycle
+    --height=45%
+    --info=inline
+    --layout=reverse
+    --no-sort
+
+    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+    --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+    --color=selected-bg:#45475a
+'
+
+# Helix
+function helix
+    command helix $argv
+    printf '\033[0 q'
+end
+
+# Zellij
+if set -q ZELLIJ
+    function zellij_update_name --on-variable PWD
+        if test $PWD = $HOME
+            set -f directory '~'
+        else
+            set -f directory $(basename $PWD)
+        end
+
+        zellij action rename-pane $directory
+    end
+
+    if test $PWD != $HOME
+        zellij_update_name
+    end
+end
+
+#
+# Theme
+#
+
+set --global fish_color_autosuggestion 555 brblack
+set --global fish_color_cancel -r
+set --global fish_color_command blue
+set --global fish_color_comment red
+set --global fish_color_cwd green
+set --global fish_color_cwd_root red
+set --global fish_color_end green
+set --global fish_color_error brred
+set --global fish_color_escape brcyan
+set --global fish_color_history_current --bold
+set --global fish_color_host normal
+set --global fish_color_host_remote yellow
+set --global fish_color_normal normal
+set --global fish_color_operator brcyan
+set --global fish_color_param cyan
+set --global fish_color_quote yellow
+set --global fish_color_redirection cyan --bold
+set --global fish_color_search_match bryellow --background=brblack
+set --global fish_color_selection white --bold --background=brblack
+set --global fish_color_status red
+set --global fish_color_user brgreen
+set --global fish_color_valid_path --underline
+set --global fish_pager_color_completion normal
+set --global fish_pager_color_description B3A06D yellow -i
+set --global fish_pager_color_prefix normal --bold --underline
+set --global fish_pager_color_progress brwhite --background=cyan
+set --global fish_pager_color_selected_background -r
