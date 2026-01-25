@@ -1,0 +1,72 @@
+// Docs: https://zed.dev/docs/configuring-zed
+{
+  // Theme
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Dark Hard",
+    "dark": "Gruvbox Dark Hard",
+  },
+
+  // Font
+  "ui_font_size": 16,
+  "buffer_font_family": "IosevkaTerm Nerd Font",
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "buffer_font_size": 16,
+  "buffer_line_height": "standard",
+
+  // Keybinds
+  "helix_mode": true,
+
+  // Toolbar
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+
+  // Minimap
+  "minimap": {
+    "show": "always",
+  },
+  "scrollbar": {
+    "axes": {
+      "vertical": false,
+    },
+  },
+
+  // Terminal
+  "terminal": {
+    "dock": "right",
+    "font_family": "IosevkaTerm Nerd Font",
+    "shell": {
+      "program": "fish",
+    },
+  },
+
+  // Git
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+
+  // Language servers
+  "lsp": {
+    "ols": {
+      "initialization_options": {
+        "verbose": true,
+      },
+    },
+  },
+
+  // Disable anti-features
+  "disable_ai": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "title_bar": {
+    "show_sign_in": false,
+  },
+}
