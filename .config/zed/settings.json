@@ -19,6 +19,12 @@
   // Keybinds
   "helix_mode": true,
 
+  // Project panel
+  "project_panel": {
+    "entry_spacing": "standard",
+    "hide_root": true,
+  },
+
   // Toolbar
   "toolbar": {
     "breadcrumbs": false,
