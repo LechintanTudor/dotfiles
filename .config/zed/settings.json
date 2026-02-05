@@ -57,6 +57,13 @@
     },
   },
 
+  // Languages
+  "languages": {
+    "GLSL": {
+      "format_on_save": "off",
+    },
+  },
+
   // Language servers
   "lsp": {
     "ols": {

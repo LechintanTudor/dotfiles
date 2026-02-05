@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: odin-setup <odin-branch> <ols-branch>"
+    exit 1
+fi
+
+REPO_DIR="$HOME/Repos"
+ODIN_DIR="$REPO_DIR/odin"
+OLS_DIR="$REPO_DIR/ols"
+
+OUTPUT_DIR="$HOME/.local/bin/odin"
+PATH="$OUTPUT_DIR:$PATH"
+
+ODIN_REPO_URL="git@github.com:odin-lang/Odin.git"
+OLS_REPO_URL="git@github.com:DanielGavin/ols.git"
+
+echo "[1/6] Preparing directories"
+rm -rf "$ODIN_DIR" "$OLS_DIR" "$OUTPUT_DIR"
+mkdir -p "$REPO_DIR" "$OUTPUT_DIR"
+
+echo "[2/6] Cloning Odin branch '$1'"
+git clone --quiet --depth=1 --branch="$1" "$ODIN_REPO_URL" "$ODIN_DIR"
+
+echo "[3/6] Cloning ols branch '$2'"
+git clone --quiet --depth=1 --branch="$2" "$OLS_REPO_URL" "$OLS_DIR"
+
+echo "[4/6] Building Odin"
+cd "$ODIN_DIR" && make release-native
+
+mv \
+  "$ODIN_DIR/odin" \
+  "$ODIN_DIR/base" \
+  "$ODIN_DIR/core" \
+  "$ODIN_DIR/vendor" \
+  "$OUTPUT_DIR"
+
+echo "[5/6] Building ols"
+cd "$OLS_DIR"
+./build.sh
+
+echo "[6/6] Building odinfmt"
+./odinfmt.sh
+
+mv \
+  "$OLS_DIR/ols" \
+  "$OLS_DIR/odinfmt" \
+  "$OUTPUT_DIR"
+
+echo "Done!"

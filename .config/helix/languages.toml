@@ -13,6 +13,9 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "rust"
 
+[language-server.ols]
+verbose = true
+
 [language-server.rust-analyzer.config]
 hover.memoryLayout.alignment = "decimal"
 hover.memoryLayout.offset = "decimal"

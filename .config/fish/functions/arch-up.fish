@@ -1,6 +1,6 @@
 function arch-up
     echo '[1/5] Updating Arch packages...'
-    paru
+    sudo pacman -Syu
     echo
 
     echo '[2/5] Deleting orphaned Arch packages...'

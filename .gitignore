@@ -1,18 +1,14 @@
 # Ignore everything
 /*
 
-# Include these top-level files
+# Include config files
 !.bashrc
 !.gitignore
 !README.md
 
-# Allow including files from these directories
+# Include config directories
 !.config/
-
-# Ignore files from previously whitelisted directories
 .config/*
-
-# Include files from whitelisted directories
 !.config/alacritty/
 !.config/bat/
 !.config/fastfetch/
@@ -23,4 +19,12 @@
 !.config/niri/
 !.config/paru/
 !.config/tmux/
+!.config/zed/
 !.config/zellij/
+
+# Include the scripts directory 
+!.local/
+.local/*
+!.local/bin/
+.local/bin/*
+!.local/bin/scripts/

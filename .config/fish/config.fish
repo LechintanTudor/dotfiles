@@ -6,6 +6,8 @@ set -U fish_greeting
 #
 
 fish_add_path -P "$HOME/.cargo/bin"
+fish_add_path -P "$HOME/.local/bin/odin"
+fish_add_path -P "$HOME/.local/bin/scripts"
 
 #
 # Environment
