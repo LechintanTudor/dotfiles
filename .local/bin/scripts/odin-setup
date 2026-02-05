@@ -26,7 +26,8 @@ echo "[3/6] Cloning ols branch '$2'"
 git clone --quiet --depth=1 --branch="$2" "$OLS_REPO_URL" "$OLS_DIR"
 
 echo "[4/6] Building Odin"
-cd "$ODIN_DIR" && make release-native
+cd "$ODIN_DIR"
+make release-native
 
 mv \
   "$ODIN_DIR/odin" \
