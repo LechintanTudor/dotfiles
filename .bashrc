@@ -1,3 +1,4 @@
+# Exit early if not running interactively.
 [[ $- != *i* ]] && return
 
 #
@@ -19,9 +20,7 @@ alias ff='fastfetch'
 # Program replacements
 #
 
-type -t bat >/dev/null && alias cat='bat'
+type -t bat >/dev/null && alias cat='bat' && alias cats='bat -pp'
 type -t doas >/dev/null && alias sudo='doas'
-type -t fd >/dev/null && alias find='fd'
 type -t lsd >/dev/null && alias ls='lsd'
-type -t rg >/dev/null && alias grep='rg'
 type -t zoxide >/dev/null && eval "$(zoxide init bash)"

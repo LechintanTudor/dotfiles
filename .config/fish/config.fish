@@ -68,11 +68,9 @@ abbr -a ff fastfetch
 # Program replacements
 #
 
-type -q bat && alias cat bat
+type -q bat && alias cat bat && alias cats 'bat -pp'
 type -q doas && alias sudo doas
-type -q fd && alias find fd
 type -q lsd && alias ls lsd
-type -q rg && alias grep rg
 type -q zoxide && zoxide init --cmd cd fish | source
 
 #

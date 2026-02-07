@@ -17,10 +17,10 @@ bat cache --build
 
 ## Core Programs
 
-- Terminal emulator: [alacritty](https://github.com/alacritty/alacritty)
-- Terminal multiplexer: [tmux](https://github.com/tmux/tmux)
+- Terminal: [ghostty](https://github.com/ghostty-org/ghostty)
 - Shell: [fish](https://github.com/fish-shell/fish-shell)
 - Text editor: [helix](https://github.com/helix-editor/helix)
+- GUI text editor: [zed](https://github.com/zed-industries/zed)
 
 ## Program Replacements
 
