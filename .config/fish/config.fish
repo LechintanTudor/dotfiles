@@ -102,23 +102,6 @@ function helix
     printf '\033[0 q'
 end
 
-# Zellij
-if set -q ZELLIJ
-    function zellij_update_name --on-variable PWD
-        if test $PWD = $HOME
-            set -f directory '~'
-        else
-            set -f directory $(basename $PWD)
-        end
-
-        zellij action rename-pane $directory
-    end
-
-    if test $PWD != $HOME
-        zellij_update_name
-    end
-end
-
 #
 # Theme
 #

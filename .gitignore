@@ -16,11 +16,9 @@
 !.config/ghostty/
 !.config/helix/
 !.config/lsd/
-!.config/niri/
 !.config/paru/
 !.config/tmux/
 !.config/zed/
-!.config/zellij/
 
 # Include the scripts directory 
 !.local/
