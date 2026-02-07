@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo '[1/4] Updating Arch packages...'
+sudo pacman -Syu
+echo
+
+echo '[2/4] Deleting orphaned Arch packages...'
+pacman -Qdtq | xargs --no-run-if-empty sudo pacman -Rns --noconfirm --
+echo
+
+echo '[3/4] Updating Flatpaks...'
+flatpak update -y
+echo
+
+echo '[4/4] Deleting unused Flatpaks...'
+flatpak remove --unused -y
