@@ -7,6 +7,7 @@ unfocused-split-opacity = 0.8
 command = /usr/bin/fish
 
 # Window
+title = "Ghostty"
 window-width = 110
 window-height = 30
 window-padding-x = 4
