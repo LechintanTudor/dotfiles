@@ -3,8 +3,8 @@
   // Theme
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Dark Hard",
-    "dark": "Gruvbox Dark Hard",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
   },
 
   // Font
