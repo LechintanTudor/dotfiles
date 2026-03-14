@@ -5,6 +5,18 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
+if [ "$1" != '-' ]; then
+  SHOULD_BUILD_ODIN=true
+else
+  SHOULD_BUILD_ODIN=false
+fi
+
+if [ "$2" != '-' ]; then
+  SHOULD_BUILD_OLS=true
+else
+  SHOULD_BUILD_OLS=false
+fi
+
 REPO_DIR="$HOME/Repos"
 ODIN_DIR="$REPO_DIR/odin"
 OLS_DIR="$REPO_DIR/ols"
@@ -16,36 +28,55 @@ ODIN_REPO_URL="git@github.com:odin-lang/Odin.git"
 OLS_REPO_URL="git@github.com:DanielGavin/ols.git"
 
 echo "[1/6] Preparing directories"
-rm -rf "$ODIN_DIR" "$OLS_DIR" "$OUTPUT_DIR"
+rm -rf "$OUTPUT_DIR"
 mkdir -p "$REPO_DIR" "$OUTPUT_DIR"
 
-echo "[2/6] Cloning Odin branch '$1'"
-git clone --quiet --depth=1 --branch="$1" "$ODIN_REPO_URL" "$ODIN_DIR"
+if $SHOULD_BUILD_ODIN; then
+  rm -rf "$ODIN_DIR"
+  echo "[2/6] Cloning Odin branch '$1'"
+  git clone --quiet --depth=1 --branch="$1" "$ODIN_REPO_URL" "$ODIN_DIR"
+else
+  echo "[2/6] Skipping Odin clone"
+fi
 
-echo "[3/6] Cloning ols branch '$2'"
-git clone --quiet --depth=1 --branch="$2" "$OLS_REPO_URL" "$OLS_DIR"
+if $SHOULD_BUILD_OLS; then
+  rm -rf "$OLS_DIR"
+  echo "[3/6] Cloning ols branch '$2'"
+  git clone --quiet --depth=1 --branch="$2" "$OLS_REPO_URL" "$OLS_DIR"
+else
+  echo "[3/6] Skipping ols clone"
+fi
 
-echo "[4/6] Building Odin"
-cd "$ODIN_DIR"
-make release-native
+if $SHOULD_BUILD_ODIN; then
+  echo "[4/6] Building Odin"
+  cd "$ODIN_DIR"
+  make release-native
 
-mv \
-  "$ODIN_DIR/odin" \
-  "$ODIN_DIR/base" \
-  "$ODIN_DIR/core" \
-  "$ODIN_DIR/vendor" \
-  "$OUTPUT_DIR"
+  mv \
+    "$ODIN_DIR/odin" \
+    "$ODIN_DIR/base" \
+    "$ODIN_DIR/core" \
+    "$ODIN_DIR/vendor" \
+    "$OUTPUT_DIR"
+else
+  echo "[4/6] Skipping Odin build"
+fi
 
-echo "[5/6] Building ols"
-cd "$OLS_DIR"
-./build.sh
+if $SHOULD_BUILD_OLS; then
+  echo "[5/6] Building ols"
+  cd "$OLS_DIR"
+  ./build.sh
 
-echo "[6/6] Building odinfmt"
-./odinfmt.sh
+  echo "[6/6] Building odinfmt"
+  ./odinfmt.sh
 
 mv \
   "$OLS_DIR/ols" \
   "$OLS_DIR/odinfmt" \
   "$OUTPUT_DIR"
+else
+  echo "[5/6] Skipping ols build"
+  echo "[6/6] Skipping odinfmt build"
+fi
 
 echo "Done!"
