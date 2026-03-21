@@ -9,4 +9,12 @@
       "alt-l": "workspace::ActivatePaneRight",
     },
   },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-a q": "pane::CloseActiveItem",
+      "ctrl-a b": "pane::SplitDown",
+      "ctrl-a v": "pane::SplitRight",
+    },
+  },
 ]
