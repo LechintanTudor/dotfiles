@@ -64,6 +64,7 @@
   },
 
   // Language servers
+  "show_completions_on_input": false,
   "lsp": {
     "ols": {
       "initialization_options": {
