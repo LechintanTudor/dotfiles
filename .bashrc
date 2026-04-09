@@ -11,12 +11,6 @@ COLOR_NORMAL='\[\e[00m\]'
 PS1="[$COLOR_GREEN\W$COLOR_NORMAL]\$ "
 
 #
-# Environment
-#
-
-type -t bat >/dev/null && export MANPAGER='bat -plman'
-
-#
 # Abbreviations
 #
 
