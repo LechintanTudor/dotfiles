@@ -1,6 +1,7 @@
 theme = "catppuccin_mocha"
 
 [editor]
+auto-completion = false
 color-modes = true
 end-of-line-diagnostics = "hint"
 popup-border = "all"
@@ -30,3 +31,4 @@ C-k = "move_visual_line_up"
 C-l = "move_char_right"
 
 C-s = [":write-all!", "normal_mode"]
+C-space = "completion"
