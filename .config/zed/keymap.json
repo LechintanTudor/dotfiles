@@ -1,6 +1,11 @@
 // Docs: https://zed.dev/docs/key-bindings
 [
   {
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+    },
+  },
+  {
     "context": "Workspace",
     "bindings": {
       "alt-h": "workspace::ActivatePaneLeft",
