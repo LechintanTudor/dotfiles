@@ -1,17 +1,19 @@
 // Docs: https://zed.dev/docs/key-bindings
 [
   {
-    "bindings": {
-      "ctrl-s": "workspace::Save",
-    },
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "alt-h": "workspace::ActivatePaneLeft",
       "alt-j": "workspace::ActivatePaneDown",
       "alt-k": "workspace::ActivatePaneUp",
       "alt-l": "workspace::ActivatePaneRight",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+      "ctrl-shift-s": "workspace::SaveAll",
     },
   },
   {
