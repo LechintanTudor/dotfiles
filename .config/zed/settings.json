@@ -2,8 +2,8 @@
 {
   // Theme
   "theme": {
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte - No Italics",
+    "dark": "Catppuccin Mocha - No Italics",
   },
 
   // Font
@@ -15,8 +15,10 @@
   "buffer_font_size": 16,
   "buffer_line_height": "standard",
 
-  // Keybinds
+  // Editor behavior
+  "format_on_save": "on",
   "helix_mode": true,
+  "show_completions_on_input": false,
 
   // Project panel
   "project_panel": {
@@ -65,7 +67,6 @@
   },
 
   // Language servers
-  "show_completions_on_input": false,
   "lsp": {
     "ols": {
       "initialization_options": {
