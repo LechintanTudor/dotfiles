@@ -15,6 +15,7 @@ fish_add_path -P "$HOME/.local/bin/scripts"
 
 set -gx EDITOR helix
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+set -gx VCPKG_ROOT "$HOME/.local/share/vcpkg"
 
 #
 # Keybindings
