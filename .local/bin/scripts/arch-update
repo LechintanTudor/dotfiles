@@ -1,30 +1,41 @@
 #!/bin/sh
 
-SUDO_COMMANDS='run0 doas sudo'
+has_command() {
+  command -v "$1" >/dev/null 2>&1
+}
 
-for command in $SUDO_COMMANDS; do
-  if command -v "$command" >/dev/null; then
-    sudo_command="$command"
-    break
-  fi
-done
-
-if [ -z "$sudo_command" ]; then
+if has_command run0; then
+  sudo_command='run0 --background='
+elif has_command doas; then
+  sudo_command=doas
+elif has_command sudo; then
+  sudo_command=sudo
+else
   echo 'No sudo command found. Exiting...'
   exit 1
 fi
 
-echo '[1/4] Updating Arch packages...'
-"$sudo_command" pacman -Syu
-echo
+if has_command flatpak; then
+  has_flatpak=true
+  step_count=4
+else
+  has_flatpak=false
+  step_count=2
+fi
 
-echo '[2/4] Deleting orphaned Arch packages...'
-pacman -Qdtq | xargs --no-run-if-empty "$sudo_command" pacman -Rns --noconfirm --
-echo
+echo "[1/$step_count] Updating Arch packages..."
+$sudo_command pacman -Syu
 
-echo '[3/4] Updating Flatpaks...'
-flatpak update -y
 echo
+echo "[2/$step_count] Deleting orphaned Arch packages..."
+pacman -Qdtq | xargs --no-run-if-empty $sudo_command pacman -Rns --noconfirm --
 
-echo '[4/4] Deleting unused Flatpaks...'
-flatpak remove --unused -y
+if $has_flatpak; then
+  echo
+  echo "[3/$step_count] Updating Flatpaks..."
+  flatpak update -y
+
+  echo
+  echo "[4/$step_count] Deleting unused Flatpaks..."
+  flatpak remove --unused -y
+fi
