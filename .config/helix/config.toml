@@ -3,7 +3,6 @@ theme = "catppuccin_mocha"
 [editor]
 auto-completion = false
 color-modes = true
-end-of-line-diagnostics = "hint"
 popup-border = "all"
 shell = ["fish", "-c"]
 
