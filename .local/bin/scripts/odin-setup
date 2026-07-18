@@ -17,7 +17,7 @@ else
   SHOULD_BUILD_OLS=false
 fi
 
-REPO_DIR="$HOME/Repos"
+REPO_DIR="$HOME/Projects/Repos"
 ODIN_DIR="$REPO_DIR/odin"
 OLS_DIR="$REPO_DIR/ols"
 
