@@ -70,6 +70,7 @@
   "lsp": {
     "ols": {
       "initialization_options": {
+        "odin_root_override": "~/.local/bin/odin",
         "verbose": true,
       },
     },
