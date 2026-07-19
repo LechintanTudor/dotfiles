@@ -29,14 +29,10 @@ bind \cq search-history
 # Program abbreviations
 #
 
-# Change directory
-abbr -a cd- cd -
-abbr -a cd.. cd ..
-
 # Cargo
+abbr -a c cargo
 abbr -a cb cargo build
 abbr -a cbr cargo build --release
-abbr -a c cargo
 abbr -a cr cargo run
 abbr -a crr cargo run --release
 
@@ -46,16 +42,20 @@ abbr -a dc docker compose
 abbr -a dr docker run --rm -it
 
 # Dotfiles
-abbr -a dfsa dotfiles add .
 abbr -a dfs dotfiles
+abbr -a dfsa dotfiles add .
 abbr -a dfss dotfiles status
 abbr -a --set-cursor dfsc dotfiles commit -m \'%\'
 
 # Git
-abbr -a ga git add .
 abbr -a g git
+abbr -a ga git add .
 abbr -a gs git status
 abbr -a --set-cursor gc git commit -m \'%\'
+
+# Change directory
+abbr -a cd- cd -
+abbr -a cd.. cd ..
 
 # Editors
 abbr -a hx helix
@@ -64,6 +64,7 @@ abbr -a vi nvim
 
 # Other
 abbr -a ff fastfetch
+abbr -a j just
 
 #
 # Program replacements
