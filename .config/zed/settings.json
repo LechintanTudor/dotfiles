@@ -71,6 +71,8 @@
     "ols": {
       "initialization_options": {
         "odin_root_override": "~/.local/bin/odin",
+        "enable_auto_import": true,
+        "enable_semantic_tokens": true,
         "verbose": true,
       },
     },
