@@ -51,16 +51,16 @@ if $SHOULD_BUILD_ODIN; then
   echo "[4/6] Building Odin"
   cd "$ODIN_DIR"
   make release-native
-
-  mv \
-    "$ODIN_DIR/odin" \
-    "$ODIN_DIR/base" \
-    "$ODIN_DIR/core" \
-    "$ODIN_DIR/vendor" \
-    "$OUTPUT_DIR"
 else
   echo "[4/6] Skipping Odin build"
 fi
+
+cp -r \
+  "$ODIN_DIR/base" \
+  "$ODIN_DIR/core" \
+  "$ODIN_DIR/odin" \
+  "$ODIN_DIR/vendor" \
+  "$OUTPUT_DIR"
 
 if $SHOULD_BUILD_OLS; then
   echo "[5/6] Building ols"
@@ -69,16 +69,15 @@ if $SHOULD_BUILD_OLS; then
 
   echo "[6/6] Building odinfmt"
   ./odinfmt.sh
-
-  cp -r "$OLS_DIR/builtin" "$OUTPUT_DIR"
-
-  mv \
-    "$OLS_DIR/ols" \
-    "$OLS_DIR/odinfmt" \
-    "$OUTPUT_DIR"
 else
   echo "[5/6] Skipping ols build"
   echo "[6/6] Skipping odinfmt build"
 fi
+
+cp -r \
+  "$OLS_DIR/builtin" \
+  "$OLS_DIR/odinfmt" \
+  "$OLS_DIR/ols" \
+  "$OUTPUT_DIR"
 
 echo "Done!"
