@@ -53,6 +53,10 @@ abbr -a ga git add .
 abbr -a gs git status
 abbr -a --set-cursor gc git commit -m \'%\'
 
+# Nob
+abbr -a n ./nob
+abbr -a nb ./nob build
+
 # Change directory
 abbr -a cd- cd -
 abbr -a cd.. cd ..
