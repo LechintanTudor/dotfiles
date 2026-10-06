@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: odin-setup <odin-branch> <ols-branch>"
-    exit 1
+  echo "Usage: odin-setup <odin-branch> <ols-branch>"
+  exit 1
 fi
 
 if [ "$1" != '-' ]; then
@@ -27,32 +27,32 @@ PATH="$OUTPUT_DIR:$PATH"
 ODIN_REPO_URL="git@github.com:odin-lang/Odin.git"
 OLS_REPO_URL="git@github.com:DanielGavin/ols.git"
 
-echo "[1/6] Preparing directories"
+echo "[1/7] Preparing directories"
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$REPO_DIR" "$OUTPUT_DIR"
 
 if $SHOULD_BUILD_ODIN; then
   rm -rf "$ODIN_DIR"
-  echo "[2/6] Cloning Odin branch '$1'"
+  echo "[2/7] Cloning Odin branch '$1'"
   git clone --quiet --depth=1 --branch="$1" "$ODIN_REPO_URL" "$ODIN_DIR"
 else
-  echo "[2/6] Skipping Odin clone"
+  echo "[2/7] Skipping Odin clone"
 fi
 
 if $SHOULD_BUILD_OLS; then
   rm -rf "$OLS_DIR"
-  echo "[3/6] Cloning ols branch '$2'"
+  echo "[3/7] Cloning ols branch '$2'"
   git clone --quiet --depth=1 --branch="$2" "$OLS_REPO_URL" "$OLS_DIR"
 else
-  echo "[3/6] Skipping ols clone"
+  echo "[3/7] Skipping ols clone"
 fi
 
 if $SHOULD_BUILD_ODIN; then
-  echo "[4/6] Building Odin"
+  echo "[4/7] Building Odin"
   cd "$ODIN_DIR"
   make release-native
 else
-  echo "[4/6] Skipping Odin build"
+  echo "[4/7] Skipping Odin build"
 fi
 
 cp -r \
@@ -63,15 +63,15 @@ cp -r \
   "$OUTPUT_DIR"
 
 if $SHOULD_BUILD_OLS; then
-  echo "[5/6] Building ols"
+  echo "[5/7] Building ols"
   cd "$OLS_DIR"
   ./build.sh
 
-  echo "[6/6] Building odinfmt"
+  echo "[6/7] Building odinfmt"
   ./odinfmt.sh
 else
-  echo "[5/6] Skipping ols build"
-  echo "[6/6] Skipping odinfmt build"
+  echo "[5/7] Skipping ols build"
+  echo "[6/7] Skipping odinfmt build"
 fi
 
 cp -r \
@@ -79,5 +79,9 @@ cp -r \
   "$OLS_DIR/odinfmt" \
   "$OLS_DIR/ols" \
   "$OUTPUT_DIR"
+
+echo "[7/7] Building vendored packages"
+eval "$OUTPUT_DIR/vendor/box2d/build_box2d.sh"
+eval "$OUTPUT_DIR/vendor/stb/src/build_stb.sh"
 
 echo "Done!"
