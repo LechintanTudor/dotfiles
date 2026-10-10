@@ -81,7 +81,7 @@ cp -r \
   "$OUTPUT_DIR"
 
 echo "[7/7] Building vendored packages"
-eval "$OUTPUT_DIR/vendor/box2d/build_box2d.sh"
-eval "$OUTPUT_DIR/vendor/stb/src/build_stb.sh"
+"$OUTPUT_DIR/vendor/box2d/build_box2d.sh"
+"$OUTPUT_DIR/vendor/stb/src/build_stb.sh"
 
 echo "Done!"
